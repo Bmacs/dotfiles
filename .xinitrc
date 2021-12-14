@@ -11,6 +11,11 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 
 DEFAULT_SESSION=gnome-session
 
+xrandr --output DP-0 --left-of DP-4
+xrandr --output DP-0 --mode 2560x1440 --rate 144.00
+xrandr --output DP-4 --mode 2560x1440 --rate 144.00
+xrandr --output DP-4 --primary
+
 # merge in defaults and keymaps
 
 if [ -f $sysresources ]; then

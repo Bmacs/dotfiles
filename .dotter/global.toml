@@ -1,6 +1,6 @@
 [helpers]
 
-[x11]
+[x11.files]
 xinitrc = "~/.xinitrc"
 
 [awesome]
@@ -30,8 +30,8 @@ zshrc = "~/.bashrc"
 [default.files]
 "setup.sh" = ""
 
-[git]
+[git.files]
 gitconfig = '~/.gitconfig'
 
-[imwheel]
+[imwheel.files]
 imwheelrc = "~/.imwheelrc"

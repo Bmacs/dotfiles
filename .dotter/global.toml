@@ -1,0 +1,37 @@
+[helpers]
+
+[x11]
+xinitrc = "~/.xinitrc"
+
+[awesome]
+depends = ["graphics"]
+
+[awesome.files]
+awesome = "~/.config/awesome/rc.lua"
+rofi = "~/.config/rofi/config.rasi"
+polybar = "~/.config/polybar/config"
+
+[zsh]
+depends = ["shell"]
+
+[zsh.files]
+zprofile = "~/.zprofile"
+zshrc = "~/.zshrc"
+if = "(eq shell 'zsh')"
+
+[bash]
+depends = ["shell"]
+
+[bash.files]
+# conflicts with "zsh"
+zprofile = "~/.bash_profile"
+zshrc = "~/.bashrc"
+
+[default.files]
+"setup.sh" = ""
+
+[git]
+gitconfig = '~/.gitconfig'
+
+[imwheel]
+imwheelrc = "~/.imwheelrc"

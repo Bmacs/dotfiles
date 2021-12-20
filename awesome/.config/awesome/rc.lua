@@ -47,9 +47,10 @@ end
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
+
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
-editor = os.getenv("EDITOR") or "nano"
+editor = os.getenv("EDITOR") or "emacs"
 editor_cmd = terminal .. " -e " .. editor
 
 
@@ -251,8 +252,7 @@ globalkeys = gears.table.join(
         end,
         {description = "focus previous by index", group = "client"}
     ),
-    awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
-              {description = "show main menu", group = "awesome"}),
+
 
     awful.key({ modkey }, "l", function () awful.spawn('betterlockscreen -l') end,
             {description = "Lock the screen", group = "awesome"}),
@@ -268,15 +268,25 @@ globalkeys = gears.table.join(
               {description = "focus the previous screen", group = "screen"}),
     awful.key({ modkey,           }, "u", awful.client.urgent.jumpto,
               {description = "jump to urgent client", group = "client"}),
-    awful.key({ modkey,           }, "Tab",
+    awful.key({ "Mod1" }, "Tab",
         function ()
-            awful.client.focus.history.previous()
+            -- awful.client.focus.history.previous()
+            awful.client.focus.byidx(-1)
             if client.focus then
                 client.focus:raise()
             end
-        end,
-        {description = "go back", group = "client"}),
+        end),
 
+    awful.key({ "Mod1", "Shift" }, "Tab",
+        function ()
+            -- awful.client.focus.history.previous()
+            awful.client.focus.byidx(1)
+            if client.focus then
+                client.focus:raise()
+            end
+        end),
+    
+    
     -- Standard program
     awful.key({ modkey }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
@@ -301,8 +311,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift" }, "s", function () awful.spawn("flameshot gui") end,
               {description = "Flameshot (Screenshot)", group = "layout"}),
     awful.key({ modkey, "Control" }, "space", function () awful.spawn("kpl") end,
-              {description = "Twitch", group = "layout"}),
-
+              {description = "Twitch", group = "layout"}),    
     awful.key({ modkey, "Control" }, "n",
               function ()
                   local c = awful.client.restore()
@@ -325,6 +334,14 @@ globalkeys = gears.table.join(
 )
 
 clientkeys = gears.table.join(
+    awful.key({ modkey }, "g", 
+    function (c)   
+        c.floating = not c.floating
+        c.width = c.screen.geometry.width*3/5
+        c.x = c.screen.geometry.x+(c.screen.geometry.width/5)
+        c.height = c.screen.geometry.height * 0.93
+        c.y = c.screen.geometry.height* 0.04
+    end),
     awful.key({ modkey }, "f",
         function (c)
             c.fullscreen = not c.fullscreen
@@ -333,8 +350,6 @@ clientkeys = gears.table.join(
         {description = "toggle fullscreen", group = "client"}),
     awful.key({ modkey }, "q",      function (c) c:kill()                         end,
               {description = "close", group = "client"}),
-    awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
-              {description = "toggle floating", group = "client"}),
     awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end,
               {description = "move to master", group = "client"}),
     awful.key({ modkey,           }, "o",      function (c) c:move_to_screen()               end,

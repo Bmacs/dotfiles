@@ -16,7 +16,7 @@ nix-env -iA \
 	nixpkgs.gcc \
 	nixpkgs.direnv
 
-stow awesome
+stow awesome/.config/awesome
 stow imwheel
 stow x11
 stow zsh

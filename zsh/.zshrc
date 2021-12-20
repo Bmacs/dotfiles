@@ -8,3 +8,8 @@ fi
 if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
   source /usr/share/zsh/manjaro-zsh-prompt
 fi
+
+if [ -e /home/bmacs/.nix-profile/etc/profile.d/nix.sh ]; then . /home/bmacs/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+#aliases
+alias g='git'

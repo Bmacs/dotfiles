@@ -11,5 +11,9 @@ fi
 
 if [ -e /home/bmacs/.nix-profile/etc/profile.d/nix.sh ]; then . /home/bmacs/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
+#exports
+export LC_ALL="en_US.UTF-8"
+export LANGUAGE="en_US.UTF-8"
+
 #aliases
 alias g='git'

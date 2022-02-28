@@ -9,12 +9,12 @@ usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
-DEFAULT_SESSION=gnome-session
+DEFAULT_SESSION=awesome
 
-xrandr --output DP-0 --left-of DP-4
-xrandr --output DP-0 --mode 2560x1440 --rate 144.00
-xrandr --output DP-4 --mode 2560x1440 --rate 144.00
-xrandr --output DP-4 --primary
+exec xrandr --output DP-0 --left-of DP-4
+exec xrandr --output DP-0 --mode 2560x1440 --rate 144.00
+exec xrandr --output DP-4 --mode 2560x1440 --rate 144.00
+exec xrandr --output DP-4 --primary
 
 # merge in defaults and keymaps
 

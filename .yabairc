@@ -54,6 +54,9 @@ yabai -m rule --add app="^Bitwarden$" manage=off
 yabai -m rule --add app="^Hue Sync$" manage=off
 yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
+yabai -m rule --add app="^Spacedrive$" manage=off
+yabai -m rule --add app="^Music$" manage=off
+yabai -m rule --add app="^$" manage=off
 
 echo "Yabai is good to go"
 

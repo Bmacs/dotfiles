@@ -1,3 +1,15 @@
+# screenshots
+alt - w : screencapture -Wi -c
+
+# Move window to display 2 (right monitor)
+alt - e : yabai -m window --display 2; yabai -m display --focus 2
+
+# Move window to display 3 (left monitor)
+alt - d : yabai -m window --display 1; yabai -m display --focus 1
+
+#yabai -m signal --add event=window_moved app="^iTerm2$" action="yabai -m window $YABAI_WINDOW_ID --grid 4:4:1:1:2:2"
+
+
 # focus window
 alt - h : yabai -m window --focus west
 alt - j : yabai -m window --focus south
@@ -5,18 +17,18 @@ alt - k : yabai -m window --focus north
 alt - l : yabai -m window --focus east
 
 # grow windows
-shift + alt - h : yabai -m window --resize left:-20:0
-shift + alt - l : yabai -m window --resize right:20:0
-shift + alt - k : yabai -m window --resize top:0:-20
-shift + alt - j : yabai -m window --resize bottom:0:20
+#ctrl + shift - h : yabai -m window --resize left:-20:0
+#ctrl + shift - l : yabai -m window --resize right:20:0
+#ctrl + shift - k : yabai -m window --resize top:0:-20
+#ctrl + shift - j : yabai -m window --resize bottom:0:20
 
 # change size of focused window
 
 # move managed window
-shift + alt + ctrl - h : yabai -m window --warp west
-shift + alt + ctrl - j : yabai -m window --warp south
-shift + alt + ctrl - k : yabai -m window --warp north
-shift + alt + ctrl - l : yabai -m window --warp east
+alt + shift - h : yabai -m window --warp west
+alt + shift - j : yabai -m window --warp south
+alt + shift - k : yabai -m window --warp north
+alt + shift - l : yabai -m window --warp east
 
 # restart yabai
 alt - y : brew services stop yabai && brew services start yabai
@@ -39,7 +51,7 @@ alt - g : yabai -m window --toggle float;\
 # alt - e : yabai -m window --toggle split
 
 # balance size of windows
-shift + alt - 0 : yabai -m space --balance
+#alt - ; : yabai -m space --balance
 
 # move window and focus desktop
 alt - 1 : yabai -m window --space 1; yabai -m space --focus 1
@@ -64,4 +76,4 @@ alt - 0 : yabai -m space --focus recent
 # send window to monitor and follow focus
 shift + alt - n : yabai -m window --display next; yabai -m display --focus next
 
-shift + alt - p : yabai -m window --display previous; yabai -m display --focus previous
+shift + alt - p : yabai -m window --display previous; yabai -m display --focus previou

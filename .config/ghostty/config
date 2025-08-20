@@ -1,0 +1,26 @@
+theme = Adventure
+font-family = DejaVuSansM Nerd Font Mono
+font-size = 24
+
+macos-titlebar-style = tabs
+window-decoration = true
+window-save-state = always
+
+quick-terminal-position = "center"
+
+shell-integration = zsh
+cursor-style-blink = true
+mouse-hide-while-typing = true
+
+#background-opacity = 0.85
+background-blur = true
+bold-is-bright = true
+
+link-url = true
+auto-update = download
+resize-overlay-position = top-center
+
+# keybinds
+keybind=super+w=close_tab
+
+#keybind= super+g=split_window
